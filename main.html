@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>testtest</title>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href=""><h1>테스트</h1></a>
+        </div>
+        <div class="search">
+            <input type="text" id="searchValue">
+            <span class="searchBtn" onclick="search()">🔍</span>
+        </div>
+    </header>
+    <hr style="margin-bottom: 40px;">
+    <div class="content">
+        <section id="testSec">
+            <div class="test" id="랜덤테스트"
+            onclick="randomTest()">
+                <img src="./image/random.jpg" alt="">
+                <div class="title" style="background-image: url(./image/randomBack.png);">
+                    <p>랜덤 테스트 🎲</p>
+                </div>
+            </div>
+            <div class="test" id="우정테스트"
+            onclick="location.href=''">
+                <img src="./image/friendship.png" alt="">
+                <div class="title" style="background-color: #ffadad;">
+                    <p>우정 테스트 ❤️</p>
+                </div>
+            </div>
+            <div class="test" id="당신의초능력은"
+            onclick="location.href='./superpowers/sp1.html'">
+                <img src="./image/superpowers.jpg" alt="">
+                <div class="title" style="background-color: #7096dc;">
+                    <p>내가 가진 초능력은 ⚡</p>
+                </div>
+            </div>
+            <div class="test" id="내IQ는"
+            onclick="location.href='./iq/iq1.html'">
+                <img src="./image/iq.png" alt="" class="nh">
+                <div class="title" style="background-color: #009ce2;">
+                    <p>내 IQ는 🧠</p>
+                </div>
+            </div>
+            <div class="test" id="내EQ는"
+            onclick="location.href='./eq/eq1.html'">
+                <img src="./image/eq.png" alt="" class="nh">
+                <div class="title" style="background-color: #ff6d9f;">
+                    <p>내 EQ는 😄</p>
+                </div>
+            </div>
+            <div class="test" id="내정신연령은"
+            onclick="location.href='./age/age1.html'">
+                <img src="./image/age.jpg" alt="" style="margin-top: 20px;">
+                <div class="title" style="background-color: #84f384;">
+                    <p>내 정신연령은 👨‍🍼</p>
+                </div>
+            </div>
+            <div class="test" id="내게맞는직업은"
+            onclick="location.href='./job/job1.html'">
+                <img src="./image/job.png" alt="" class="nh">
+                <div class="title" style="background-color: #ffe14e;">
+                    <p>내게 맞는 직업은 👮👨‍⚕️</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="./js/main.js"></script>
+</body>
+</html>

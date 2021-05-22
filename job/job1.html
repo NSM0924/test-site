@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내게 맞는 직업은 👮👨‍⚕️</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        html, body{
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        body{
+            background-color: #ffee9d;
+        }
+        .container{
+            display: flex;
+            height: 100%;
+            width: 100%;
+            align-items: center;
+        }
+        .content{
+            margin: 0 auto;
+            width: 60%;
+            box-shadow: 1px 1px 6px 1px #00000045;
+            border-radius: 20px;
+        }
+        .questionBox{
+            font-size: 20px;
+            border-radius: 20px 20px 0 0;
+            background-color: #ffe14e;
+            text-align: center;
+            padding: 5% 10px;
+        }
+        .btnBox{
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            overflow: hidden;
+            user-select: none;
+        }
+        .btn{
+            cursor: pointer;
+            padding: 30px 0;
+            background-color: #ffea83;
+            transition: 0.3s;
+        }
+        .btn:hover{
+            background-color: #ffd300;
+        }
+
+        #my_name{
+            width: 70px;
+            border: 1px solid;
+            border-radius: 10px;
+        }
+        #my_name:focus{
+            outline: none;
+        }
+
+        @media screen and (max-width: 830px) {
+            .content{
+                width: 80%;
+            }
+        }
+
+        @media screen and (max-width: 425px) {
+            .container{
+                display: block;
+            }
+            .content{
+                margin: 0;
+                height: 100%;
+                width: 100%;
+            }
+            .questionBox{
+                font-size: 15px;
+                border-radius: 0;
+                text-align: center;
+                padding: 10% 10px;
+            }
+            .btnBox{
+                border-radius: 0;
+                bottom: 0;
+                position: absolute;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="questionBox">
+                <h2>내게 맞는 직업은 👮👨‍⚕️</h2>
+                <br>
+                <span><b>유의사항</b></span>
+                본 테스트는 재미를 위한 것입니다.<br>
+                본 테스트의 결과는 실제가 아니라 랜덤입니다.
+                <br>
+                <br>
+                나의 이름은 : <input type="text" id="my_name">
+            </div>
+            <div class="btnBox">
+                <div class="btn" onclick="btnClick()"><p><b>테스트 시작</b></p></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let my_age = document.getElementById("my_name");
+        
+        function btnClick() {
+            if (my_name.value == "") {
+                alert("이름을 입력해 주세요.")
+            } else {
+                window.location.href='./job2.html'
+                localStorage.setItem('my_name', my_name.value)
+            }
+        }
+    </script>
+</body>
+
+</html>

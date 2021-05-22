@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내 정신연령은 👨‍🍼</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        html, body{
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        body{
+            background-color: #d8f3dc;
+        }
+        .container{
+            display: flex;
+            height: 100%;
+            width: 100%;
+            align-items: center;
+        }
+        .content{
+            margin: 0 auto;
+            width: 60%;
+            box-shadow: 1px 1px 6px 1px #00000045;
+            border-radius: 20px;
+        }
+        .questionBox{
+            font-size: 25px;
+            border-radius: 20px 20px 0 0;
+            background-color: #74c69d;
+            text-align: center;
+            padding: 10% 10px;
+        }
+        .btnBox{
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            overflow: hidden;
+            user-select: none;
+        }
+        .btn{
+            cursor: pointer;
+            padding: 5px 0;
+            background-color: #b7e4c7;
+            transition: 0.3s;
+        }
+        .btn:hover{
+            background-color: #40916c;
+            color: white;
+        }
+        .bar{
+            height: 10px;
+            background: #40916c;
+            width: 3.3%;
+        }
+
+        @media screen and (max-width: 830px) {
+            .content{
+                width: 80%;
+            }
+        }
+
+        @media screen and (max-width: 425px) {
+            .bar{
+                position: fixed;
+            }
+            .container{
+                display: block;
+            }
+            .content{
+                margin: 0;
+                height: 100%;
+                width: 100%;
+            }
+            .questionBox{
+                font-size: 20px;
+                border-radius: 0;
+                padding: 15% 20px;
+                font-weight: bold;
+            }
+            .btnBox{
+                border-radius: 0;
+                bottom: 0;
+                position: absolute;
+                width: 100%;
+            }
+            .btn{
+                padding: 10px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bar"></div>
+    <div class="container">
+        <div class="content">
+            <div class="questionBox">
+                <p id="question">1. 내 스타일에 많이 신경쓰는 편이다.</p>
+            </div>
+            <div class="btnBox">
+                <div class="btn" onclick="score(1)"><p>예</p></div>
+                <div class="btn" onclick="score(-1)"><p>아니요</p></div>
+                <div class="btn" onclick="score(0)"><p>둘다 아님</p></div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        let my_age;
+        if(localStorage.getItem('my_age')){
+            my_age = localStorage.getItem('my_age')
+        }
+        console.log(my_age)
+
+        let i = 1;
+        let barWidth = 6.6;
+        let question = ["1. 내 스타일에 많이 신경쓰는 편이다.",
+                        "2. 나는 참을성이 강하다.",
+                        "3. 힘든 일을 일부러 생각하려 하지 않는다.",
+                        "4. 자주 우는 편이다.",
+                        "5. 마음에 안 드는 일이 있으면 화부터 난다.",
+                        "6. ‘애 늙은이’같다는 소리를 자주 듣는다.",
+                        "7. 내 또래 친구들 보다는 윗 사람들과 말이 더 잘 통한다.",
+                        "8. 아침에 혼자서는 일어나기 싫다.",
+                        "9. 아침에 일어나며 ‘오늘 하루도 화이팅’등의 말을 스스로에게 자주 하는 편이다.",
+                        "10. ‘나도 참을대로 참았다, 이젠 더 이상 양보할 수 없다’라는 생각을 자주 한다.",
+                        "11. ‘색즉시공’이 무슨 뜻인지 알고 있다.",
+                        "12. 여행이나 큰 행사와 같은 일의 전날 밤에는 잠을 이루지 못한다.",
+                        "13. 생각보다 행동을 먼저 하는 편이다.",
+                        "14. 요즘 무엇이 유행하는지 모른다.",
+                        "15. 나는 꿈이 있다.",
+                        "16. 시간, 돈, 음식을 많이 낭비하는 편이다.",
+                        "17. 나는 좌절을 많이 겪었다.",
+                        "18. 나는 신문지나 책 등으로 바퀴벌레와 같은 벌레를 자주 때려 죽인다.",
+                        "19. 빨리 늙고싶다.",
+                        "20. 난 혼자서는 지낼 수 없다고 생각한다.",
+                        "21. 분위기에 맞춰 호응하는 것을 좋아한다.",
+                        "22. 여행을 가는 것보다는 집에 있는 것이 더 좋다.",
+                        "23. 나의 인생 계획은 어려운 일이 아니라고 생각한다.",
+                        "24. 오랫동안 책을 안 읽었다.",
+                        "25. 가끔씩 문뜩 노래를 하고 싶어 진다.",
+                        "26. 도시보다는 시골이 나한테 더 맞는 것 같다.",
+                        "27. 자주 놀림을 받는다.",
+                        "28. 내가 스스로 그린 인생이야말로 의미가 있다고 생각한다.",
+                        "29. 가끔씩 감정이 북받쳐 올라서 컨트롤 할 수 없을 때가 많다.",
+                        "30. 일을 미루지 않고 일의 효율이 높은 편이라고 생각한다.",]
+
+        function score(e){
+            my_age = Number(my_age) + e
+            console.log(my_age)
+            document.getElementById("question").textContent=question[i]
+            i++
+            document.querySelector(".bar").style.width = `${barWidth}%`;
+            barWidth += 3.3;
+
+            if(i == 31){
+                testResult()
+            }
+        }
+
+        function testResult(){
+            document.getElementById("question").textContent=`당신의 정신연령은 ${my_age}살 입니다.`
+            document.querySelector(".btnBox").innerHTML=`
+                <div class="btn" onclick="location.href='./age1.html'"><p>다시 검사하기</p></div>
+                <div class="btn" onclick="location.href='../main.html'"><p>다른 테스트</p></div>`
+        }
+
+    </script>
+</body>
+
+</html>

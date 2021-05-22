@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내 정신연령은 👨‍🍼</title>
+</head>
+
+<body onload="changeSel()">
+    <h2>정신연령 테스트</h2>
+    <span><b>유의사항</b></span>
+    검사 시작 전에 실제 나이를 입력해 주세요. 이 테스트는 지능지수와 무관 합니다.<br>
+    본 테스트 문답에 열심히 응해주시기 바랍니다.<br>
+        <br>
+        나의 실제 나이는 : <select id="my_age" name="age" onchange="changeSel()">
+            <option value="0">선택하세요</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+            <option value="27">27</option>
+            <option value="28">28</option>
+            <option value="29">29</option>
+            <option value="30">30</option>
+        </select>
+        <br>
+        <button onclick="btnClick()" class="button" style="width:200px;font-weight:bold;font-size:1.2rem;">검사
+            시작</button>
+    <script>
+        let sel = document.getElementById("my_age");
+        let index;
+        function changeSel() {
+            index = sel.selectedIndex;
+            console.log(index)
+        }
+        function btnClick() {
+            if (index == 0) {
+                alert("나이를 선택해 주세요.")
+            } else {
+                window.location.href='./test2.html'
+            }
+        }
+    </script>
+</body>
+
+</html>

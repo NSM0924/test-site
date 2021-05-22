@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내 정신연령은 👨‍🍼</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        html, body{
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        body{
+            background-color: #d8f3dc;
+        }
+        .container{
+            display: flex;
+            height: 100%;
+            width: 100%;
+            align-items: center;
+        }
+        .content{
+            margin: 0 auto;
+            width: 60%;
+            box-shadow: 1px 1px 6px 1px #00000045;
+            border-radius: 20px;
+        }
+        .questionBox{
+            font-size: 20px;
+            border-radius: 20px 20px 0 0;
+            background-color: #74c69d;
+            text-align: center;
+            padding: 5% 10px;
+        }
+        .btnBox{
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            overflow: hidden;
+            user-select: none;
+        }
+        .btn{
+            cursor: pointer;
+            padding: 30px 0;
+            background-color: #b7e4c7;
+            transition: 0.3s;
+        }
+        .btn:hover{
+            background-color: #40916c;
+            color: white;
+        }
+
+        #my_age{
+            width: 40px;
+            border: 1px solid;
+            border-radius: 10px;
+        }
+        #my_age:focus{
+            outline: none;
+        }
+
+        @media screen and (max-width: 830px) {
+            .content{
+                width: 80%;
+            }
+        }
+
+        @media screen and (max-width: 425px) {
+            .container{
+                display: block;
+            }
+            .content{
+                margin: 0;
+                height: 100%;
+                width: 100%;
+            }
+            .questionBox{
+                font-size: 15px;
+                border-radius: 0;
+                text-align: center;
+                padding: 10% 10px;
+            }
+            .btnBox{
+                border-radius: 0;
+                bottom: 0;
+                position: absolute;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="questionBox">
+                <h2>내 정신연령은 👨‍🍼</h2>
+                <br>
+                <span><b>유의사항</b></span>
+                검사 시작 전에 실제 나이를 입력해 주세요. <br> 이 테스트는 지능지수와 무관 합니다.<br>
+                본 테스트 문답에 열심히 응해주시기 바랍니다.
+                <br>
+                <br>
+                나의 성별은 <select name="gender">
+                            <option value="man">남자</option>
+                            <option value="woman">여자</option>
+                            <option value="no">응답 안함</option>
+                        </select>
+                <br>
+                나의 실제 나이는 : <input type="number" id="my_age" min="0">
+            </div>
+            <div class="btnBox">
+                <div class="btn" onclick="btnClick()"><p><b>검사 시작</b></p></div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        let my_age = document.getElementById("my_age");
+        
+        function btnClick() {
+            if (my_age.value == "") {
+                alert("나이를 입력해 주세요.")
+            } else {
+                window.location.href='./age2.html'
+                localStorage.setItem('my_age', my_age.value)
+            }
+        }
+    </script>
+</body>
+
+</html>
