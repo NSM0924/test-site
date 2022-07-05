@@ -7,77 +7,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>내게 맞는 직업은 👮👨‍⚕️</title>
     <style>
-        *{
+        * {
             margin: 0;
         }
-        html, body{
+
+        html,
+        body {
             width: 100%;
             height: 100%;
             overflow: hidden;
         }
-        body{
+
+        body {
             background-color: #ffee9d;
         }
-        .container{
+
+        .container {
             display: flex;
             height: 100%;
             width: 100%;
             align-items: center;
         }
-        .content{
+
+        .content {
             margin: 0 auto;
             width: 60%;
             box-shadow: 1px 1px 6px 1px #00000045;
             border-radius: 20px;
         }
-        .questionBox{
+
+        .questionBox {
             font-size: 25px;
             border-radius: 20px 20px 0 0;
             background-color: #ffe14e;
             text-align: center;
             padding: 10% 10px;
         }
-        .btnBox{
+
+        .btnBox {
             text-align: center;
             border-radius: 0 0 20px 20px;
             overflow: hidden;
             user-select: none;
         }
-        .btn{
+
+        .btn {
             cursor: pointer;
             padding: 5px 0;
             background-color: #ffea83;
             transition: 0.3s;
         }
-        .btn:hover{
+
+        .btn:hover {
             background-color: #ffd300;
         }
 
         @media screen and (max-width: 830px) {
-            .content{
+            .content {
                 width: 80%;
             }
         }
 
         @media screen and (max-width: 425px) {
-            .bar{
+            .bar {
                 position: fixed;
             }
-            .container{
+
+            .container {
                 display: block;
             }
-            .content{
+
+            .content {
                 margin: 0;
                 height: 100%;
                 width: 100%;
             }
-            .questionBox{
+
+            .questionBox {
                 font-size: 20px;
                 border-radius: 0;
                 padding: 15% 20px;
                 font-weight: bold;
             }
-            .btnBox{
+
+            .btnBox {
                 border-radius: 0;
                 bottom: 0;
                 position: absolute;
@@ -86,12 +99,12 @@
         }
     </style>
     <script>
-        let num = Math.floor(Math.random()*13)
-        let job = [  "의사👨‍⚕️👩‍⚕️🩺", "교사👨‍🏫👩‍🏫🏫", "판사👨‍⚖️👩‍⚖️⚖️",
-                    "농부👨‍🌾👩‍🌾🌾", "요리사👨‍🍳👩‍🍳🍳", "정비공👨‍🔧👩‍🔧🛠️",
-                    "회사원👨‍💼👩‍💼💼", "과학자👨‍🔬👩‍🔬🔬", "가수🎙️",
-                    "화가👨‍🎨👩‍🎨🎨", "우주비행사👨‍🚀👩‍🚀🚀", "소방관👨‍🚒👩‍🚒🚒",
-                    "경찰관👮‍♂️👮‍♀️🚓", ]
+        let num = Math.floor(Math.random() * 13)
+        let job = ["의사👨‍⚕️👩‍⚕️🩺", "교사👨‍🏫👩‍🏫🏫", "판사👨‍⚖️👩‍⚖️⚖️",
+            "농부👨‍🌾👩‍🌾🌾", "요리사👨‍🍳👩‍🍳🍳", "정비공👨‍🔧👩‍🔧🛠️",
+            "회사원👨‍💼👩‍💼💼", "과학자👨‍🔬👩‍🔬🔬", "가수🎙️",
+            "화가👨‍🎨👩‍🎨🎨", "우주비행사👨‍🚀👩‍🚀🚀", "소방관👨‍🚒👩‍🚒🚒",
+            "경찰관👮‍♂️👮‍♀️🚓",]
     </script>
 </head>
 
@@ -102,21 +115,25 @@
                 <p id="question"></p>
             </div>
             <div class="btnBox">
-                <div class="btn" onclick="location.href='./job1.html'"><p>다시 검사하기</p></div>
-                <div class="btn" onclick="location.href='../main.html'"><p>다른 테스트</p></div>
+                <div class="btn" onclick="location.href='job1.html'">
+                    <p>다시 검사하기</p>
+                </div>
+                <div class="btn" onclick="location.href='/RandomTest-site'">
+                    <p>다른 테스트</p>
+                </div>
             </div>
         </div>
     </div>
 
     <script>
         let my_name;
-        if(localStorage.getItem('my_name')){
+        if (localStorage.getItem('my_name')) {
             my_name = localStorage.getItem('my_name')
         }
         console.log(my_name)
 
-        document.getElementById("question").innerHTML=
-        `${my_name}님에게 맞는 직업은 <br> ${job[num]} 입니다.`
+        document.getElementById("question").innerHTML =
+            `${my_name}님에게 맞는 직업은 <br> ${job[num]} 입니다.`
     </script>
 </body>
 

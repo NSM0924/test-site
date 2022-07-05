@@ -7,83 +7,96 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>내 EQ는 😄</title>
     <style>
-        *{
+        * {
             margin: 0;
         }
-        html, body{
+
+        html,
+        body {
             width: 100%;
             height: 100%;
             overflow: hidden;
         }
-        body{
+
+        body {
             background-color: #fadde1;
         }
-        .container{
+
+        .container {
             display: flex;
             height: 100%;
             width: 100%;
             align-items: center;
         }
-        .content{
+
+        .content {
             margin: 0 auto;
             width: 60%;
             box-shadow: 1px 1px 6px 1px #00000045;
             border-radius: 20px;
         }
-        .questionBox{
+
+        .questionBox {
             font-size: 20px;
             border-radius: 20px 20px 0 0;
             background-color: #ffa6c1;
             text-align: center;
             padding: 5% 10px;
         }
-        .btnBox{
+
+        .btnBox {
             text-align: center;
             border-radius: 0 0 20px 20px;
             overflow: hidden;
             user-select: none;
         }
-        .btn{
+
+        .btn {
             cursor: pointer;
             padding: 30px 0;
             background-color: #ffc4d6;
             transition: 0.3s;
         }
-        .btn:hover{
+
+        .btn:hover {
             background-color: #ff87ab;
         }
 
-        #my_name{
+        #my_name {
             width: 70px;
             border: 1px solid;
             border-radius: 10px;
         }
-        #my_name:focus{
+
+        #my_name:focus {
             outline: none;
         }
 
         @media screen and (max-width: 830px) {
-            .content{
+            .content {
                 width: 80%;
             }
         }
 
         @media screen and (max-width: 425px) {
-            .container{
+            .container {
                 display: block;
             }
-            .content{
+
+            .content {
                 margin: 0;
                 height: 100%;
                 width: 100%;
             }
-            .questionBox{
+
+            .questionBox {
                 font-size: 15px;
                 border-radius: 0;
                 text-align: center;
                 padding: 10% 10px;
             }
-            .btnBox{
+
+            .btnBox {
                 border-radius: 0;
                 bottom: 0;
                 position: absolute;
@@ -107,19 +120,21 @@
                 나의 이름은 : <input type="text" id="my_name">
             </div>
             <div class="btnBox">
-                <div class="btn" onclick="btnClick()"><p><b>테스트 시작</b></p></div>
+                <div class="btn" onclick="btnClick()">
+                    <p><b>테스트 시작</b></p>
+                </div>
             </div>
         </div>
     </div>
 
     <script>
         let my_age = document.getElementById("my_name");
-        
+
         function btnClick() {
             if (my_name.value == "") {
                 alert("이름을 입력해 주세요.")
             } else {
-                window.location.href='./eq2.html'
+                window.location.href = 'eq2.html'
                 localStorage.setItem('my_name', my_name.value)
             }
         }

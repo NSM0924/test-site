@@ -7,30 +7,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>내가 가진 초능력은 ⚡</title>
     <style>
-        *{
+        * {
             margin: 0;
         }
-        html, body{
+
+        html,
+        body {
             width: 100%;
             height: 100%;
             overflow: hidden;
         }
-        body{
+
+        body {
             background-color: #a9d6e5;
         }
-        .container{
+
+        .container {
             display: flex;
             height: 100%;
             width: 100%;
             align-items: center;
         }
-        .content{
+
+        .content {
             margin: 0 auto;
             width: 60%;
             box-shadow: 1px 1px 6px 1px #00000045;
             border-radius: 20px;
         }
-        .questionBox{
+
+        .questionBox {
             font-size: 25px;
             border-radius: 20px 20px 0 0;
             background-color: #61a5c2;
@@ -38,48 +44,55 @@
             padding: 10% 10px;
             color: white;
         }
-        .btnBox{
+
+        .btnBox {
             text-align: center;
             border-radius: 0 0 20px 20px;
             overflow: hidden;
             user-select: none;
         }
-        .btn{
+
+        .btn {
             cursor: pointer;
             padding: 5px 0;
             background-color: #89c2d9;
             transition: 0.3s;
         }
-        .btn:hover{
+
+        .btn:hover {
             background-color: #468faf;
             color: white;
         }
 
         @media screen and (max-width: 830px) {
-            .content{
+            .content {
                 width: 80%;
             }
         }
 
         @media screen and (max-width: 425px) {
-            .bar{
+            .bar {
                 position: fixed;
             }
-            .container{
+
+            .container {
                 display: block;
             }
-            .content{
+
+            .content {
                 margin: 0;
                 height: 100%;
                 width: 100%;
             }
-            .questionBox{
+
+            .questionBox {
                 font-size: 20px;
                 border-radius: 0;
                 padding: 15% 20px;
                 font-weight: bold;
             }
-            .btnBox{
+
+            .btnBox {
                 border-radius: 0;
                 bottom: 0;
                 position: absolute;
@@ -88,25 +101,25 @@
         }
     </style>
     <script>
-        let num = Math.floor(Math.random()*13)
-        let sp = [  "시간멈춤", "공간이동", "타인조종",
-                    "불사신", "변신능력", "사람현혹",
-                    "투명인간", "비행능력", "분신술",
-                    "마음투시력", "부활능력", "천리안",
-                    "축지법", ]
-        let spInfo = [  "시간을 멈추어 모든것들은 멈춰있어도 마음대로 움직일수 있는",
-                        "순식간에 다른 공간으로 이동할 수 있는",
-                        "나외의 다른 사람을 마음대로 조종할수 있는",
-                        "어떠한 상황에도 다치지 않고 죽지 않는",
-                        "다른 물건, 사람등으로 변신할 수 있는",
-                        "자신을 보는 다른사람을 손쉽게 현혹시키는",
-                        "투명한 몸이 되어 남들에게 보이지 않는",
-                        "하늘을 날수 있는",
-                        "자신과 같은 분신을 여러 개 만드는",
-                        "모든 생명체의 마음 속 소리를 들을 수 있는",
-                        "죽었을 때 한번만 더 살아날 수 있는",
-                        "천리 밖의 상황을 볼 수 있는",
-                        "매우 빠르게 이동하는"]
+        let num = Math.floor(Math.random() * 13)
+        let sp = ["시간멈춤", "공간이동", "타인조종",
+            "불사신", "변신능력", "사람현혹",
+            "투명인간", "비행능력", "분신술",
+            "마음투시력", "부활능력", "천리안",
+            "축지법",]
+        let spInfo = ["시간을 멈추어 모든것들은 멈춰있어도 마음대로 움직일수 있는",
+            "순식간에 다른 공간으로 이동할 수 있는",
+            "나외의 다른 사람을 마음대로 조종할수 있는",
+            "어떠한 상황에도 다치지 않고 죽지 않는",
+            "다른 물건, 사람등으로 변신할 수 있는",
+            "자신을 보는 다른사람을 손쉽게 현혹시키는",
+            "투명한 몸이 되어 남들에게 보이지 않는",
+            "하늘을 날수 있는",
+            "자신과 같은 분신을 여러 개 만드는",
+            "모든 생명체의 마음 속 소리를 들을 수 있는",
+            "죽었을 때 한번만 더 살아날 수 있는",
+            "천리 밖의 상황을 볼 수 있는",
+            "매우 빠르게 이동하는"]
     </script>
 </head>
 
@@ -117,21 +130,25 @@
                 <p id="question">1. 내 스타일에 많이 신경쓰는 편이다.</p>
             </div>
             <div class="btnBox">
-                <div class="btn" onclick="location.href='./sp1.html'"><p>다시 검사하기</p></div>
-                <div class="btn" onclick="location.href='../main.html'"><p>다른 테스트</p></div>
+                <div class="btn" onclick="location.href='sp1.html'">
+                    <p>다시 검사하기</p>
+                </div>
+                <div class="btn" onclick="location.href='/RandomTest-site'">
+                    <p>다른 테스트</p>
+                </div>
             </div>
         </div>
     </div>
 
     <script>
         let my_name;
-        if(localStorage.getItem('my_name')){
+        if (localStorage.getItem('my_name')) {
             my_name = localStorage.getItem('my_name')
         }
         console.log(my_name)
 
-        document.getElementById("question").innerHTML=
-        `${my_name}님의 초능력은 <br> ${spInfo[num]} <br>『${sp[num]}』 입니다.`
+        document.getElementById("question").innerHTML =
+            `${my_name}님의 초능력은 <br> ${spInfo[num]} <br>『${sp[num]}』 입니다.`
     </script>
 </body>
 
